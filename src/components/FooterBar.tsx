@@ -35,9 +35,7 @@ const FooterBar: React.FC<FooterBarProps> = ({ selected, skips, onBack }) => {
             >
               ← Back
             </button>
-            <button
-              className="px-8 py-3 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg w-full md:w-auto"
-            >
+            <button className="px-8 py-3 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg w-full md:w-auto">
               Continue
               <ArrowRight size={20} className="font-bold" />
             </button>
@@ -51,7 +49,8 @@ const FooterBar: React.FC<FooterBarProps> = ({ selected, skips, onBack }) => {
     <footer className="block bottom-0 left-0 right-0 bg-white shadow-gray-700 shadow-2xl p-4 z-50 w-full">
       <div className="max-w-5xl mx-auto text-center">
         <p className="text-sm text-gray-500">
-          Imagery shown may not reflect exact specifications. Colours may vary. Additional costs may apply.
+          Imagery shown may not reflect exact specifications. Colours may vary.
+          Additional costs may apply.
         </p>
       </div>
     </footer>

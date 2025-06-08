@@ -1,11 +1,9 @@
 import React from "react";
 import { AlertTriangle, Check, Shield } from "lucide-react";
 import type { Skip } from "@/types/types";
-import skipImg from "/images/5-yarder-skip.jpg"; // Make sure this path is correct
-
+import skipImg from "/images/5-yarder-skip.jpg";
 
 const getSkipImage = (skip: Skip) => {
-  // Use local image for 5 yard, fallback to API image for others
   if (skip.name.includes("5 Yard")) return skipImg;
   return skip.image;
 };
@@ -35,7 +33,6 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, selected, onSelect }) => (
     }}
     aria-pressed={selected === skip.id}
   >
-    {/* Image with overlay badge */}
     <div className="relative h-40 sm:h-48 w-full overflow-hidden">
       <img
         src={getSkipImage(skip)}
@@ -58,7 +55,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, selected, onSelect }) => (
         </span>
       )}
     </div>
-    {/* Card content */}
+
     <div className="flex flex-col flex-grow p-4">
       <div className="flex justify-between items-start mb-2">
         <h3 className="text-lg font-bold truncate pr-2">{skip.name}</h3>
@@ -97,7 +94,10 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, selected, onSelect }) => (
           </>
         ) : (
           <>
-            Select <span className="ml-1"><Check size={18} /></span>
+            Select{" "}
+            <span className="ml-1">
+              <Check size={18} />
+            </span>
           </>
         )}
       </button>

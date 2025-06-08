@@ -8,7 +8,11 @@ interface ProgressNavProps {
   selected: number | null;
 }
 
-const ProgressNav: React.FC<ProgressNavProps> = ({ step, setStep, selected }) => (
+const ProgressNav: React.FC<ProgressNavProps> = ({
+  step,
+  setStep,
+  selected,
+}) => (
   <>
     {/* Desktop */}
     <nav className="hidden lg:flex flex-nowrap overflow-x-auto gap-2 md:gap-4 mb-8 justify-center items-center">
@@ -55,9 +59,10 @@ const ProgressNav: React.FC<ProgressNavProps> = ({ step, setStep, selected }) =>
           <span
             key={stepObj.label}
             className={`flex items-center justify-center rounded-full transition-all duration-200
-              ${i === step
-                ? "bg-white text-[#2563eb] font-semibold shadow-lg scale-110"
-                : "bg-slate-200 text-slate-400"
+              ${
+                i === step
+                  ? "bg-white text-[#2563eb] font-semibold shadow-lg scale-110"
+                  : "bg-slate-200 text-slate-400"
               }
               w-10 h-10`}
           >

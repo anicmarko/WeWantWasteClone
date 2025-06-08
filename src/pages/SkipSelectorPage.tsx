@@ -62,7 +62,11 @@ const SkipSelectorPage = () => {
         )}
         {selected !== null && <div aria-hidden className="h-28 md:h-20" />}
       </main>
-      <FooterBar selected={selected} skips={skips} onBack={() => setSelected(null)} />
+      <FooterBar
+        selected={selected}
+        skips={skips}
+        onBack={() => setSelected(null)}
+      />
     </div>
   );
 };
