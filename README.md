@@ -61,6 +61,10 @@ A modern, responsive React application, inspired by the WeWantWaste platform. Th
 
 ## 📬 Contact
 
+<<<<<<< HEAD
 For questions or feedback, please open an issue or contact [aniicmarko@gmail.com](mailto:aniicmarko@gmail.com).
+=======
+For questions or feedback, please open an issue or contact [aniicmarko@example.com](mailto:aniicmarko@gmail.com).
+>>>>>>> c6abd5688cdeef280885f08ec1d4a0ed12cab972
 
 ---
