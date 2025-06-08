@@ -1,9 +1,9 @@
-import type { Skip } from "@/types/types";
 import { useEffect, useState } from "react";
+import type { Skip } from "@/types/types";
 import ProgressNav from "@/components/ProgressNav";
 import SkipCard from "@/components/SkipCard";
-import skipImg from "/images/5-yarder-skip.jpg"; // Ensure this path is correct
-
+import FooterBar from "@/components/FooterBar";
+import skipImg from "/images/5-yarder-skip.jpg";
 
 const SkipSelectorPage = () => {
   const [skips, setSkips] = useState<Skip[]>([]);
@@ -24,7 +24,7 @@ const SkipSelectorPage = () => {
           price: s.price_before_vat,
           hirePeriod: `${s.hire_period_days} day`,
           allows_heavy_waste: s.allows_heavy_waste,
-          image: skipImg ,
+          image: skipImg,
           notAllowedOnRoad: !s.allowed_on_road,
         }));
         setSkips(skips);
@@ -34,13 +34,8 @@ const SkipSelectorPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#c7d2fe] text-[#1e293b] font-sans">
-        <main className={`max-w-5xl mx-auto px-2 sm:px-4 py-6 transition-all duration-300 pb-18 sm:pb-18`}>
-        {/* Progress Nav */}
-        {/* Progress Nav - Desktop */}
+      <main className="max-w-5xl mx-auto px-2 sm:px-4 py-6 transition-all duration-300 pb-18 sm:pb-18">
         <ProgressNav step={step} setStep={setStep} selected={selected} />
-
-
-        {/* Title */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold mb-2 tracking-tight">
             Select Your Skip
@@ -49,18 +44,12 @@ const SkipSelectorPage = () => {
             Find the perfect skip size for your needs
           </p>
         </div>
-
-        {/* Skips */}
         {loading ? (
           <div className="flex justify-center items-center h-40">
             <span className="animate-spin rounded-full border-4 border-blue-200 border-t-blue-600 w-10 h-10 inline-block" />
           </div>
         ) : (
-          <section
-  className={`
-    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5
-  `}
->
+          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {skips.map((skip) => (
               <SkipCard
                 key={skip.id}
@@ -71,14 +60,11 @@ const SkipSelectorPage = () => {
             ))}
           </section>
         )}
-        {selected !== null && (
-          <div aria-hidden className="h-28 md:h-20" />
-        )}
+        {selected !== null && <div aria-hidden className="h-28 md:h-20" />}
       </main>
-      
+      <FooterBar selected={selected} skips={skips} onBack={() => setSelected(null)} />
     </div>
   );
-
 };
 
 export default SkipSelectorPage;
